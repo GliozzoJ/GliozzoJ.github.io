@@ -30,6 +30,19 @@
             <i class="fa-brands fa-github"></i>
         </a>
     {% endif %}
+    
+       {% if site.scholar %}
+        <a class="link" data-title="scholar.google.com/citations?user=/{{ site.scholar }}" href="https://scholar.google.com/citations?user={{ site.scholar }}" target="_blank"  rel="noopener">
+            <i class="fa-brands fa-google"></i>
+        </a>
+    {% endif %}
+    
+          {% if site.researchgate %}
+        <a class="link" data-title="researchgate.net/profile/{{ site.researchgate }}" href="https://www.researchgate.net/profile/{{ site.researchgate }}" target="_blank"  rel="noopener">
+            <i class="fa-brands fa-researchgate"></i>
+        </a>
+    {% endif %}
+
 
     {% if site.email %}
         <a class="link" data-title="{{ site.email }}" href="mailto:{{ site.email }}"  rel="noopener">
