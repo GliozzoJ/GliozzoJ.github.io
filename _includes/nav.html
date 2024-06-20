@@ -47,6 +47,14 @@
             {% endif %}
         {% endif %}
         
+        
+        {% if site.software == true %}
+                <li class="item">
+                    <a class="link" href="{{ site.url }}/software">Software</a>
+                </li>
+
+        {% endif %}
+
 
         {% if site.resume == true %}
             <li class="item">
