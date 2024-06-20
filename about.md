@@ -2,6 +2,9 @@
 title: About
 layout: page
 ---
+
+# About me
+
 ![Profile Image]({% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %})
 
 <p>Jessica Gliozzo is a research fellow at the Department of Computer Science, Università degli Studi di
