@@ -1,6 +1,6 @@
 # main text of home
 title: Jessica Gliozzo, PhD
-bio: Researcher in Bioinformatics and Machine Learning <3
+bio: Researcher in Bioinformatics and Machine Learning
 
 # twitter summary info
 description: PhD Jessica Gliozzo's personal website.
@@ -42,7 +42,7 @@ github: GliozzoJ
 scholar: btVEevkAAAAJ&hl
 orcid: 0000-0001-7629-8112
 researchgate: Jessica-Gliozzo
-email: jessica.gliozzo@gmail.com
+email: jessica.gliozzo@unimi.it
 
 authors:
   johndoe:
