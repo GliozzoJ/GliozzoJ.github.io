@@ -30,8 +30,8 @@ Staiano, and Angelo Ciaramella, 11925:88–98. Cham: Springer
 International Publishing. <https://doi.org/10.1007/978-3-030-34585-3_8>.
 
 Barricelli, Barbara Rita, Elena Casiraghi, Jessica Gliozzo, Veronica
-Huber, Biagio Eugenio Leone, Alessandro Rizzi, and Barbara Vergani.
-2019. “Ki67 Nuclei Detection and Ki67-Index Estimation: A Novel
+Huber, Biagio Eugenio Leone, Alessandro Rizzi, and Barbara Vergani. 2019. 
+“Ki67 Nuclei Detection and Ki67-Index Estimation: A Novel
 Automatic Approach Based on Human Vision Modeling.” *BMC Bioinformatics*
 20 (1): 733. <https://doi.org/10.1186/s12859-019-3285-4>.
 
@@ -98,7 +98,10 @@ Javier Herrera, and Francisco Ortuño, 12108:600–612. Cham: Springer
 International Publishing.
 <https://doi.org/10.1007/978-3-030-45385-5_54>.
 
-———. 2022. “Boosting Tissue-Specific Prediction of Active Cis-Regulatory
+
+Cappelletti, Luca, Alessandro Petrini, Jessica Gliozzo, Elena Casiraghi,
+Max Schubach, Martin Kircher, and Giorgio Valentini. 2022. 
+“Boosting Tissue-Specific Prediction of Active Cis-Regulatory
 Regions Through Deep Learning and Bayesian Optimization Techniques.”
 *BMC Bioinformatics* 23 (2): 154.
 <https://doi.org/10.1186/s12859-022-04582-5>.
