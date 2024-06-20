@@ -5,18 +5,17 @@ layout: page
 
 # Teaching
 
-- A.Y. 2023-2024 Tutor for the practival lessons of the course “Bioinformatics” (Master's degree 
+- A.Y. 2023-2024 Tutor for the practical lessons of the course “Bioinformatics” (Master's degree 
 in Computer Science [LM-18], Università degli Studi di Milano) (material on [github](https://github.com/GliozzoJ/Bioinformatics_practice_2023-2024))
 
-- A.Y. 2022-2023 ATutor for the practival lessons of the course “Bioinformatics” (Master's degree 
+- A.Y. 2022-2023 Tutor for the practical lessons of the course “Bioinformatics” (Master's degree 
 in Computer Science [LM-18], Università degli Studi di Milano (material on [github](https://github.com/GliozzoJ/Bioinformatics_practice2023))
 
 
 # Seminars
 
-- Speaker at the Advanced Program “FILOGENESI APPLICATA ALLA EPIDEMIOLOGIA
-E SORVEGLIANZA GENOMICA DEGLI AGENTI INFETTIVI” at Dipartimento di Scienze Biomediche
-e Cliniche, Università degli Studi di Milano. I presented my work entitled “Pipelines automatiche per
+- Speaker at the Advanced Program “[FILOGENESI APPLICATA ALLA EPIDEMIOLOGIA
+E SORVEGLIANZA GENOMICA DEGLI AGENTI INFETTIVI](https://sites.google.com/view/phylovir20/annunci)” at Dipartimento di Scienze Biomediche e Cliniche, Università degli Studi di Milano. I presented my work entitled “Pipelines automatiche per
 l’analisi di genomi virali SARS-CoV-2” (coming soon 5 July 2024).
 
 - Speaker at the course “Bioinfomatics” (Master's degree 
