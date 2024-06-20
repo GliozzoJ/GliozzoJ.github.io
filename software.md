@@ -17,5 +17,5 @@ The following software libraries are freely available for the scientific communi
 
 - Maintainer of the R library **NetInt: Methods for Unweighted and Weighted Network Integration** ([link](https://cran.r-project.org/web/packages/NetInt/index.html))
 
-- Collaborator to the R library **mclustcomp}: Measures for Comparing Clusters** ([link](https://github.com/kisungyou/mclustcomp))
+- Collaborator to the R library **mclustcomp: Measures for Comparing Clusters** ([link](https://github.com/kisungyou/mclustcomp))
 
