@@ -1,44 +1,36 @@
 ---
-title: Publications
+title: Teaching
 layout: page
 ---
 
-<p>Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+# Teaching
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+- A.Y. 2023-2024 Tutor for the practival lessons of the course “Bioinformatics” (Master's degree 
+in Computer Science [LM-18], Università degli Studi di Milano) (material on [github](https://github.com/GliozzoJ/Bioinformatics_practice_2023-2024))
 
-<h2>Skills</h2>
+- A.Y. 2022-2023 ATutor for the practival lessons of the course “Bioinformatics” (Master's degree 
+in Computer Science [LM-18], Università degli Studi di Milano (material on [github](https://github.com/GliozzoJ/Bioinformatics_practice2023))
 
-<ul class="skill-list">
-	<li>HTML - Jade - Haml - Erb</li>
-	<li>Responsive (Mobile First)</li>
-	<li>CSS (Stylus, Sass, Less)</li>
-	<li>Css Frameworks (Bootstrap, Foundation)</li>
-	<li>Javascript (Design Patterns, Testes)</li>
-	<li>AngularJS - ReactJS</li>
-	<li>Grunt - Gulp - Yeoman</li>
-	<li>Git</li>
-	<li>PHP</li>
-	<li>Python</li>
-	<li>MySQL - MongoDB</li>
-	<li>Scrum and Kanban</li>
-	<li>TDD e Continuous Integration</li>
-</ul>
 
-<h2>Projects</h2>
+# Seminars
 
-<ul>
-	<li><a href="https://github.com/">Lorem Lorem</a></li>
-	<li><a href="https://github.com/">Ipsum Dolor</a></li>
-	<li><a href="https://github.com/">Dolor Lorem</a></li>
-</ul>
+- Speaker at the Advanced Program “FILOGENESI APPLICATA ALLA EPIDEMIOLOGIA
+E SORVEGLIANZA GENOMICA DEGLI AGENTI INFETTIVI” at Dipartimento di Scienze Biomediche
+e Cliniche, Università degli Studi di Milano. I presented my work entitled “Pipelines automatiche per
+l’analisi di genomi virali SARS-CoV-2” (coming soon 5 July 2024).
+
+- Speaker at the course “Bioinfomatics” (Master's degree 
+in Computer Science [LM-18], Università degli Studi di
+Milano) in the academic years 2020-2021 e 2021-2022. I presented my work entitled “[Kernels on graphs
+and the P-Net algorithm](https://homes.di.unimi.it/gliozzo/lessons/kernels_on_graphs_and_P-Net.pdf)”.
+
+- Speaker at the course “Principles and Models of Perception” (Bachelor's degree in Computer Science for New Media Communications[L-31], Università degli Studi di Milano) in the academic year 2021-2022. I presented my work entitled “[Kernels on graphs and the P-Net algorithm](https://homes.di.unimi.it/gliozzo/lessons/kernels_on_graphs_and_P-Net.pdf)”.
+
+
+# Speaker at conferences
+
+- Speaker at the conference “BIOINFORMATICS 2023 - 14th International Conference on Bioinformatics
+Models, Methods and Algorithms”. I presented my work “[Patient Similarity Networks Integration
+for Partial Multimodal Datasets](https://www.insticc.org/node/TechnicalProgram/BIOSTEC/2023/presentationDetails/117255)”.
+
+
