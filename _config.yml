@@ -78,6 +78,7 @@ pagination:
 about: true
 publications: true
 teaching: true
+software: true
 blog: false
 
 
