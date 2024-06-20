@@ -1,9 +1,9 @@
 # main text of home
-title: Jessica Gliozzo
-bio: Researcher in Bioinformatics in love with donuts <3
+title: Jessica Gliozzo, PhD
+bio: Researcher in Bioinformatics and Machine Learning <3
 
 # twitter summary info
-description: MSc Jessica Gliozzo's personal website.
+description: PhD Jessica Gliozzo's personal website.
 
 # if it's an external image, update below for true
 # better with square images
@@ -16,9 +16,9 @@ dark-theme: false
 
 # If you want to include your resume, set to true
 # and specify source (external or local).
-resume: false
+resume: true
 resume-external: true
-resume-url: https://google.com/?q=my+resume
+resume-url: CV/CV_ITA.pdf
 
 url: https://gliozzoj.github.io
 # your url: https://USERNAME.github.io
@@ -40,6 +40,7 @@ disqus:
 linkedin: jessica-gliozzo-a8b09911b
 github: GliozzoJ
 scholar: btVEevkAAAAJ&hl
+orcid: 0000-0001-7629-8112
 researchgate: Jessica-Gliozzo
 email: jessica.gliozzo@gmail.com
 
@@ -77,7 +78,7 @@ pagination:
 about: true
 publications: true
 teaching: true
-blog: true
+blog: false
 
 
 # do you want to show the "read time" of the posts?
