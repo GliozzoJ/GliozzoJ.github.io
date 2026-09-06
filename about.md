@@ -5,7 +5,7 @@ layout: page
 
 # About me
 
-![Profile Image]({% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %})
+![Profile Image](/assets/images/gliozzo_portrait.jpg)
 
 <p>Jessica Gliozzo is a research fellow at the Department of Computer Science, Università degli Studi di
 Milano. She received her bachelor’s and master’s degrees, respectively in Medical Biotechnology (year
@@ -48,5 +48,4 @@ Mendelian diseases</li>
   <li>Human Digital Twin to track and prompt suggestions to improve the fitness status of athletes</li>
   
 </ul>
-
 
