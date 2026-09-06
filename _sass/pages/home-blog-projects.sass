@@ -23,6 +23,19 @@
             box-shadow: $omega 0 0 0 5px
             border-radius: 3px
 
+.network-background
+    position: fixed
+    inset: 0
+    z-index: 0
+    width: 100%
+    height: 100%
+    background: $omega
+    pointer-events: none
+
+@media (prefers-reduced-motion: reduce)
+    .network-background
+        opacity: .55
+
 .home > .list,
 .blog > .list,
 .projects > .list
