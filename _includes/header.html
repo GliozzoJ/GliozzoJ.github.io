@@ -6,6 +6,11 @@
 
 {% if showHeader == true %}
     <header class="header-home {% if site.animation %}animated{% endif %}">
+        {% if page.title == "Home" %}
+            <div class="research-network" data-research-network aria-hidden="true">
+                <svg focusable="false"></svg>
+            </div>
+        {% endif %}
         {% if site.about %}
             <a class="link" href="{{ site.url }}/about">
                 <img class="selfie" alt="{{ site.title }}" src="{% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" />
