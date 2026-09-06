@@ -1,16 +1,22 @@
 .social-links
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    gap: 10px
+    margin-top: 24px
+
     > .link
-        margin: 0
+        border: 1px solid currentColor
+        border-radius: 999px
+        padding: 8px 14px
         text-decoration: none
-        position: relative
         display: inline-block
-        height: 70px
-        width: 70px
         color: $zeta
+        font-size: 14px
+        line-height: 1
+        transition: color ease-in-out .2s, background-color ease-in-out .2s
 
-        &:hover
-            > svg
-                color: $delta
-
-    > svg
-        transition: all ease-in-out .2s
+        &:hover,
+        &:focus
+            color: $delta
+            background-color: rgba($delta, .08)
