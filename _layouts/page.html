@@ -1,6 +1,12 @@
 ---
 layout: default
 ---
+{% if page.title == "Home" %}
+    <div class="research-network" data-research-network aria-hidden="true">
+        <svg focusable="false"></svg>
+    </div>
+{% endif %}
+
 {% include header.html %}
 
 {{content}}

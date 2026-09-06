@@ -1,103 +1,32 @@
 .research-network
-    margin: 65px auto 0
+    position: fixed
+    z-index: 0
+    inset: 0
+    overflow: hidden
+    pointer-events: none
+    opacity: .72
 
-    &__heading
-        max-width: 600px
-        margin: 0 auto 25px
-        text-align: center
-
-        h2
-            margin: 3px 0 8px
-            font-size: 2.8rem
-
-        p
-            margin: 0
-
-    &__eyebrow
-        color: $delta !important
-        font-size: 1.2rem
-        font-weight: 500 !important
-        letter-spacing: .16em !important
-        text-transform: uppercase
-
-    &__canvas
-        position: relative
-        min-height: 430px
-        overflow: hidden
-        border: 1px solid $epsilon
-        border-radius: 18px
-        background: radial-gradient(circle at 50% 48%, rgba(75, 0, 130, .08), transparent 38%), linear-gradient(145deg, #fff 0%, #faf8fc 100%)
-        box-shadow: 0 16px 45px rgba(46, 16, 66, .07)
-        touch-action: none
-
-        svg
-            display: block
-            width: 100%
-            height: 430px
+    svg
+        display: block
+        width: 100%
+        height: 100%
 
     &__link
-        stroke: rgba(75, 0, 130, .2)
-        stroke-width: 1.5
-        transition: opacity .2s, stroke .2s
+        stroke: rgba(75, 0, 130, .32)
+        stroke-width: 1
 
     &__node
-        cursor: grab
-        outline: none
+        fill: rgba(75, 0, 130, .72)
 
-        circle
-            fill: #fff
-            stroke: $delta
-            stroke-width: 2
-            filter: drop-shadow(0 5px 8px rgba(46, 16, 66, .13))
-            transition: fill .2s, stroke-width .2s
+    @media #{$mobile}
+        opacity: .55
 
-        text
-            fill: $beta
-            font: 500 13px $fontSans
-            pointer-events: none
-            text-anchor: middle
-            user-select: none
+    @media (prefers-reduced-motion: reduce)
+        opacity: .5
 
-        &:hover circle,
-        &:focus circle
-            fill: #f2eafa
-            stroke-width: 3
-
-        &:focus-visible circle
-            outline: none
-            filter: drop-shadow(0 0 5px rgba(75, 0, 130, .6))
-
-        &--primary circle
-            fill: $delta
-            stroke: $delta
-
-        &--primary text
-            fill: #fff
-            font-size: 14px
-
-        &.is-dragging
-            cursor: grabbing
-
-    &__hint
-        position: absolute
-        right: 17px
-        bottom: 14px
-        color: $gama
-        font-size: 1.1rem
-        letter-spacing: .04em
-
-    &__fallback
-        padding: 30px
-        text-align: center
-        list-style: none
-
-    @media #{$below}
-        margin-top: 45px
-
-        &__canvas,
-        &__canvas svg
-            min-height: 390px
-            height: 390px
-
-        &__heading h2
-            font-size: 2.4rem
+.home
+    > .header-home,
+    > .nav-home,
+    > script
+        position: relative
+        z-index: 1
