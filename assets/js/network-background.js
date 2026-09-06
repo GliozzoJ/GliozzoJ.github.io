@@ -5,7 +5,6 @@
     if (!canvas || !canvas.getContext) return;
 
     var context = canvas.getContext('2d');
-    if (!context) return;
     var nodes = [];
     var pointer = { x: -1000, y: -1000, active: false };
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -34,7 +33,7 @@
         canvas.style.height = height + 'px';
         context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 
-        var targetCount = Math.max(38, Math.min(100, Math.round((width * height) / 12000)));
+        var targetCount = Math.max(30, Math.min(85, Math.round((width * height) / 15000)));
         while (nodes.length < targetCount) nodes.push(createNode());
         if (nodes.length > targetCount) nodes.length = targetCount;
     }
@@ -44,11 +43,11 @@
             var dx = node.x - pointer.x;
             var dy = node.y - pointer.y;
             var distanceSquared = dx * dx + dy * dy;
-            var influence = 160;
+            var influence = 135;
 
             if (distanceSquared < influence * influence && distanceSquared > 0) {
                 var distance = Math.sqrt(distanceSquared);
-                var force = (1 - distance / influence) * 0.85;
+                var force = (1 - distance / influence) * 0.7;
                 node.vx += (dx / distance) * force;
                 node.vy += (dy / distance) * force;
             }
@@ -78,19 +77,19 @@
                 var dy = node.y - other.y;
                 var distance = Math.sqrt(dx * dx + dy * dy);
 
-                if (distance < 145) {
+                if (distance < 130) {
                     context.beginPath();
                     context.moveTo(node.x, node.y);
                     context.lineTo(other.x, other.y);
-                    context.strokeStyle = 'rgba(75, 0, 130, ' + ((1 - distance / 145) * 0.24) + ')';
-                    context.lineWidth = 1;
+                    context.strokeStyle = 'rgba(75, 0, 130, ' + ((1 - distance / 130) * 0.16) + ')';
+                    context.lineWidth = 0.8;
                     context.stroke();
                 }
             }
 
             context.beginPath();
             context.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-            context.fillStyle = 'rgba(75, 0, 130, 0.52)';
+            context.fillStyle = 'rgba(75, 0, 130, 0.34)';
             context.fill();
         }
 
@@ -114,12 +113,8 @@
     document.addEventListener('mouseleave', function () {
         pointer.active = false;
     });
+    reduceMotion.addEventListener('change', restart);
+
     resize();
     draw();
-
-    if (reduceMotion.addEventListener) {
-        reduceMotion.addEventListener('change', restart);
-    } else if (reduceMotion.addListener) {
-        reduceMotion.addListener(restart);
-    }
 }());
