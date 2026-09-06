@@ -4,3 +4,32 @@ title: Home
 ---
 
 <script src="{{ '/assets/js/research-network.js' | relative_url }}" defer></script>
+
+{% assign about_page = site.pages | where: "title", "About" | first %}
+{% assign publications_page = site.pages | where: "title", "Publications" | first %}
+{% assign teaching_page = site.pages | where: "title", "Teaching" | first %}
+{% assign software_page = site.pages | where: "title", "Software" | first %}
+
+<main class="one-page-content">
+    <section id="about" class="one-page-section about-section">
+        {{ about_page.content | markdownify }}
+    </section>
+
+    <section id="papers" class="one-page-section">
+        {{ publications_page.content | markdownify }}
+    </section>
+
+    <section id="teaching" class="one-page-section">
+        {{ teaching_page.content | markdownify }}
+    </section>
+
+    <section id="software" class="one-page-section">
+        {{ software_page.content | markdownify }}
+    </section>
+
+    <section id="cv" class="one-page-section cv-section">
+        <h1>CV</h1>
+        <p>Read more about my education, research experience, publications, and academic activities in my curriculum vitae.</p>
+        <a class="cv-link" href="{{ site.resume-url | relative_url }}">View CV (Italian)</a>
+    </section>
+</main>
