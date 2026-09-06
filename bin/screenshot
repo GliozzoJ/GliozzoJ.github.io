@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+page="${1:-/}"
+output="${2:-screenshots/home.png}"
+container_output="/workspace/${output}"
+
+mkdir -p "$(dirname "$output")"
+
+cleanup() {
+  docker compose down
+}
+trap cleanup EXIT
+
+docker compose up --build --detach --wait site
+docker compose exec --no-TTY site chromium \
+  --headless \
+  --no-sandbox \
+  --disable-gpu \
+  --hide-scrollbars \
+  --window-size=1440,1000 \
+  --screenshot="$container_output" \
+  "http://localhost:4000${page}"
+
+printf 'Screenshot written to %s\n' "$output"

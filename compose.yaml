@@ -1,0 +1,13 @@
+services:
+  site:
+    build:
+      context: .
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/workspace
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "http://localhost:4000/"]
+      interval: 2s
+      timeout: 2s
+      retries: 30
