@@ -1,149 +1,127 @@
 (function () {
   "use strict";
 
-  var container = document.querySelector("[data-research-network]");
-  if (!container) return;
+  var network = document.querySelector("[data-research-network]");
+  if (!network) return;
 
-  var svg = container.querySelector("svg");
+  var svg = network.querySelector("svg");
   var namespace = "http://www.w3.org/2000/svg";
-  var nodes = [
-    { id: "research", label: "My research", x: 0.50, y: 0.49, radius: 52, primary: true },
-    { id: "bioinformatics", label: "Bioinformatics", x: 0.23, y: 0.25, radius: 48, href: "/about/" },
-    { id: "machine-learning", label: "Machine learning", x: 0.76, y: 0.22, radius: 53, href: "/publications/" },
-    { id: "data-science", label: "Data science", x: 0.83, y: 0.64, radius: 44, href: "/publications/" },
-    { id: "software", label: "Software", x: 0.56, y: 0.82, radius: 40, href: "/software/" },
-    { id: "teaching", label: "Teaching", x: 0.18, y: 0.72, radius: 39, href: "/teaching/" },
-    { id: "precision-medicine", label: "Precision medicine", x: 0.47, y: 0.16, radius: 49, href: "/publications/" }
-  ];
-  var edges = [
-    ["research", "bioinformatics"], ["research", "machine-learning"],
-    ["research", "data-science"], ["research", "software"],
-    ["research", "teaching"], ["research", "precision-medicine"],
-    ["bioinformatics", "precision-medicine"], ["bioinformatics", "teaching"],
-    ["machine-learning", "precision-medicine"], ["machine-learning", "data-science"],
-    ["data-science", "software"]
-  ];
-  var nodeById = {};
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var width = 0;
   var height = 0;
-  var draggedNode = null;
-  var hasMoved = false;
+  var pointer = null;
+  var frame = null;
 
-  function element(name, attributes) {
-    var item = document.createElementNS(namespace, name);
-    Object.keys(attributes || {}).forEach(function (key) {
-      item.setAttribute(key, attributes[key]);
+  var points = [
+    [.04, .18], [.17, .08], [.31, .16], [.46, .07], [.63, .15], [.79, .06], [.95, .19],
+    [.09, .42], [.24, .34], [.39, .43], [.55, .31], [.71, .39], [.88, .34],
+    [.02, .68], [.18, .62], [.33, .73], [.49, .59], [.65, .70], [.82, .62], [.98, .73],
+    [.10, .91], [.27, .87], [.43, .96], [.59, .87], [.76, .94], [.91, .86]
+  ].map(function (position, index) {
+    return {
+      x: 0, y: 0, homeX: position[0], homeY: position[1], vx: 0, vy: 0,
+      radius: index % 7 === 0 ? 5 : (index % 3 === 0 ? 3.5 : 2.5)
+    };
+  });
+
+  var connections = [
+    [0, 1], [0, 7], [1, 2], [1, 8], [2, 3], [2, 8], [2, 9], [3, 4], [3, 10],
+    [4, 5], [4, 10], [4, 11], [5, 6], [5, 12], [6, 12], [7, 8], [7, 13],
+    [8, 9], [8, 14], [9, 10], [9, 15], [9, 16], [10, 11], [10, 16], [11, 12],
+    [11, 17], [11, 18], [12, 19], [13, 14], [13, 20], [14, 15], [14, 20], [14, 21],
+    [15, 16], [15, 21], [15, 22], [16, 17], [16, 23], [17, 18], [17, 23], [17, 24],
+    [18, 19], [18, 24], [18, 25], [20, 21], [21, 22], [22, 23], [23, 24], [24, 25]
+  ];
+
+  var lines = connections.map(function () {
+    var line = document.createElementNS(namespace, "line");
+    line.setAttribute("class", "research-network__link");
+    svg.appendChild(line);
+    return line;
+  });
+
+  points.forEach(function (point) {
+    var circle = document.createElementNS(namespace, "circle");
+    circle.setAttribute("class", "research-network__node");
+    circle.setAttribute("r", point.radius);
+    svg.appendChild(circle);
+    point.circle = circle;
+  });
+
+  function draw() {
+    connections.forEach(function (connection, index) {
+      var start = points[connection[0]];
+      var end = points[connection[1]];
+      lines[index].setAttribute("x1", start.x);
+      lines[index].setAttribute("y1", start.y);
+      lines[index].setAttribute("x2", end.x);
+      lines[index].setAttribute("y2", end.y);
     });
-    return item;
+    points.forEach(function (point) {
+      point.circle.setAttribute("cx", point.x);
+      point.circle.setAttribute("cy", point.y);
+    });
   }
 
-  var title = element("title", { id: "network-svg-title" });
-  title.textContent = "Interactive map of Jessica Gliozzo's research";
-  var description = element("desc", { id: "network-svg-description" });
-  description.textContent = "A draggable network connecting bioinformatics, machine learning, data science, software, teaching, and precision medicine. Linked nodes open related pages.";
-  svg.appendChild(title);
-  svg.appendChild(description);
+  function animate() {
+    var moving = false;
+    points.forEach(function (point) {
+      var homeX = point.homeX * width;
+      var homeY = point.homeY * height;
+      point.vx += (homeX - point.x) * .035;
+      point.vy += (homeY - point.y) * .035;
 
-  var linksLayer = element("g", { "aria-hidden": "true" });
-  var nodesLayer = element("g", {});
-  svg.appendChild(linksLayer);
-  svg.appendChild(nodesLayer);
+      if (pointer) {
+        var dx = point.x - pointer.x;
+        var dy = point.y - pointer.y;
+        var distance = Math.sqrt(dx * dx + dy * dy) || 1;
+        var reach = Math.min(150, width * .22);
+        if (distance < reach) {
+          var force = (reach - distance) / reach * 2.8;
+          point.vx += dx / distance * force;
+          point.vy += dy / distance * force;
+        }
+      }
 
-  nodes.forEach(function (node) {
-    nodeById[node.id] = node;
-    node.lines = [];
-  });
-
-  edges.forEach(function (edge) {
-    var line = element("line", { "class": "research-network__link" });
-    linksLayer.appendChild(line);
-    nodeById[edge[0]].lines.push({ line: line, end: "start", other: nodeById[edge[1]] });
-    nodeById[edge[1]].lines.push({ line: line, end: "end", other: nodeById[edge[0]] });
-  });
-
-  nodes.forEach(function (node) {
-    var group = element(node.href ? "a" : "g", {
-      "class": "research-network__node" + (node.primary ? " research-network__node--primary" : ""),
-      "aria-label": node.href ? node.label + ": open related page" : node.label,
-      "role": node.href ? "link" : "img",
-      "tabindex": "0"
+      point.vx *= .84;
+      point.vy *= .84;
+      point.x += point.vx;
+      point.y += point.vy;
+      moving = moving || Math.abs(point.vx) > .02 || Math.abs(point.vy) > .02;
     });
-    if (node.href) group.setAttribute("href", node.href);
-    group.appendChild(element("circle", { r: node.radius }));
-    var words = node.label.split(" ");
-    var text = element("text", {});
-    if (words.length > 1) {
-      var midpoint = Math.ceil(words.length / 2);
-      [words.slice(0, midpoint), words.slice(midpoint)].forEach(function (line, index) {
-        var tspan = element("tspan", { x: "0", dy: index ? "1.15em" : "-.1em" });
-        tspan.textContent = line.join(" ");
-        text.appendChild(tspan);
-      });
-    } else {
-      text.setAttribute("dy", ".35em");
-      text.textContent = node.label;
-    }
-    group.appendChild(text);
-    nodesLayer.appendChild(group);
-    node.group = group;
-
-    group.addEventListener("pointerdown", function (event) {
-      draggedNode = node;
-      hasMoved = false;
-      group.classList.add("is-dragging");
-      group.setPointerCapture(event.pointerId);
-    });
-    group.addEventListener("pointermove", function (event) {
-      if (draggedNode !== node) return;
-      var point = svg.createSVGPoint();
-      point.x = event.clientX;
-      point.y = event.clientY;
-      var local = point.matrixTransform(svg.getScreenCTM().inverse());
-      var nextX = Math.max(node.radius + 4, Math.min(width - node.radius - 4, local.x));
-      var nextY = Math.max(node.radius + 4, Math.min(height - node.radius - 4, local.y));
-      hasMoved = hasMoved || Math.abs(nextX - node.px) > 3 || Math.abs(nextY - node.py) > 3;
-      node.px = nextX;
-      node.py = nextY;
-      drawNode(node);
-    });
-    group.addEventListener("pointerup", finishDrag);
-    group.addEventListener("pointercancel", finishDrag);
-    group.addEventListener("click", function (event) {
-      if (hasMoved) event.preventDefault();
-    });
-  });
-
-  function finishDrag() {
-    if (!draggedNode) return;
-    draggedNode.x = draggedNode.px / width;
-    draggedNode.y = draggedNode.py / height;
-    draggedNode.group.classList.remove("is-dragging");
-    draggedNode = null;
+    draw();
+    frame = (pointer || moving) ? window.requestAnimationFrame(animate) : null;
   }
 
-  function drawNode(node) {
-    node.group.setAttribute("transform", "translate(" + node.px + " " + node.py + ")");
-    node.lines.forEach(function (connection) {
-      connection.line.setAttribute(connection.end === "start" ? "x1" : "x2", node.px);
-      connection.line.setAttribute(connection.end === "start" ? "y1" : "y2", node.py);
-      connection.line.setAttribute(connection.end === "start" ? "x2" : "x1", connection.other.px);
-      connection.line.setAttribute(connection.end === "start" ? "y2" : "y1", connection.other.py);
-    });
+  function startAnimation() {
+    if (!reducedMotion && !frame) frame = window.requestAnimationFrame(animate);
   }
 
   function resize() {
-    var bounds = container.getBoundingClientRect();
+    var bounds = network.getBoundingClientRect();
     width = Math.round(bounds.width);
-    height = Math.round(parseFloat(window.getComputedStyle(svg).height));
+    height = Math.round(bounds.height);
     svg.setAttribute("viewBox", "0 0 " + width + " " + height);
-    nodes.forEach(function (node) {
-      node.px = node.x * width;
-      node.py = node.y * height;
+    points.forEach(function (point) {
+      point.x = point.homeX * width;
+      point.y = point.homeY * height;
+      point.vx = 0;
+      point.vy = 0;
     });
-    nodes.forEach(drawNode);
+    draw();
   }
 
+  network.parentElement.addEventListener("pointermove", function (event) {
+    var bounds = network.getBoundingClientRect();
+    pointer = { x: event.clientX - bounds.left, y: event.clientY - bounds.top };
+    startAnimation();
+  });
+  network.parentElement.addEventListener("pointerleave", function () {
+    pointer = null;
+    startAnimation();
+  });
+
   resize();
-  if (window.ResizeObserver) new ResizeObserver(resize).observe(container);
+  if (window.ResizeObserver) new ResizeObserver(resize).observe(network);
   else window.addEventListener("resize", resize);
 }());

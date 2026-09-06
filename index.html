@@ -3,25 +3,4 @@ layout: page
 title: Home
 ---
 
-<section class="research-network" aria-labelledby="research-network-title">
-  <div class="research-network__heading">
-    <p class="research-network__eyebrow">Explore my work</p>
-    <h2 id="research-network-title">Research connections</h2>
-    <p>Drag the nodes, or select one to discover the areas that connect my research.</p>
-  </div>
-
-  <div class="research-network__canvas" data-research-network>
-    <svg role="img" aria-labelledby="network-svg-title network-svg-description"></svg>
-    <span class="research-network__hint" aria-hidden="true">Drag to explore</span>
-    <noscript>
-      <ul class="research-network__fallback">
-        <li><a href="{{ '/about/' | relative_url }}">Bioinformatics</a></li>
-        <li><a href="{{ '/publications/' | relative_url }}">Machine learning</a></li>
-        <li><a href="{{ '/software/' | relative_url }}">Software</a></li>
-        <li><a href="{{ '/teaching/' | relative_url }}">Teaching</a></li>
-      </ul>
-    </noscript>
-  </div>
-</section>
-
 <script src="{{ '/assets/js/research-network.js' | relative_url }}" defer></script>
