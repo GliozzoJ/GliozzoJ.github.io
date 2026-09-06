@@ -1,7 +1,7 @@
 .research-network
-    position: fixed
-    z-index: 0
-    inset: 0
+    position: absolute
+    z-index: -1
+    inset: -45px -8% -35px
     overflow: hidden
     pointer-events: none
     opacity: .72
@@ -12,21 +12,15 @@
         height: 100%
 
     &__link
-        stroke: rgba(75, 0, 130, .32)
+        stroke: rgba(75, 0, 130, .18)
         stroke-width: 1
 
     &__node
-        fill: rgba(75, 0, 130, .72)
+        fill: rgba(75, 0, 130, .62)
 
     @media #{$mobile}
+        inset: -25px -5% -20px
         opacity: .55
 
     @media (prefers-reduced-motion: reduce)
         opacity: .5
-
-.home
-    > .header-home,
-    > .nav-home,
-    > script
-        position: relative
-        z-index: 1
