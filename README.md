@@ -46,6 +46,30 @@ If you want to test locally on your machine, do the following steps also:
 5. Open it in your browser: `http://localhost:4000`
 6. Do you want an admin panel to edit your posts? You can install this plugin [jekyll-admin](https://jekyll.github.io/jekyll-admin/).
 
+### Reproducible Docker environment
+
+The repository includes a Docker environment with Ruby, Jekyll, Chromium, and
+the fonts needed to build and visually inspect the website. Install Docker with
+the Compose plugin, then use the following commands from the repository root:
+
+```sh
+# Serve the site at http://localhost:4000 with automatic rebuilds
+bin/dev
+
+# Build the site and check the generated internal links
+bin/check
+
+# Capture the home page at 1440 x 1000
+bin/screenshot
+
+# Capture another page or choose another output path
+bin/screenshot /about/ screenshots/about.png
+```
+
+Generated pages are written inside the container rather than into the tracked
+`_site` directory. Screenshots are saved under `screenshots/`, which is ignored
+by Git.
+
 ## Settings
 
 You must fill some informations on `_config.yml` to customize your site.
