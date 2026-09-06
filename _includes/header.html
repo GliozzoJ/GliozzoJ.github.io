@@ -5,6 +5,9 @@
 %}{% assign showHeader = true %}{% endif %}
 
 {% if showHeader == true %}
+    {% if page.title == "Home" %}
+        <canvas class="network-background" data-network-background aria-hidden="true"></canvas>
+    {% endif %}
     <header class="header-home {% if site.animation %}animated{% endif %}">
         {% if site.about %}
             <a class="link" href="{{ site.url }}/about">
