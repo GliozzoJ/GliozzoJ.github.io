@@ -6,9 +6,27 @@
             </li>
         {% endif %}
 
+        {% if site.resume == true %}
+            <li class="item">
+                <a class="link" href="{{ '/#cv' | relative_url }}">CV</a>
+            </li>
+        {% endif %}
+
+        <li class="item">
+            <a class="link" href="{{ '/#experience' | relative_url }}">Experience</a>
+        </li>
+
+        <li class="item">
+            <a class="link" href="{{ '/#skills' | relative_url }}">Skills</a>
+        </li>
+
+        <li class="item">
+            <a class="link" href="{{ '/#education' | relative_url }}">Education</a>
+        </li>
+
         {% if site.publications == true %}
             <li class="item">
-                <a class="link" href="{{ '/#papers' | relative_url }}">Papers</a>
+                <a class="link" href="{{ '/#papers' | relative_url }}">Publications</a>
             </li>
         {% endif %}
 
@@ -42,11 +60,5 @@
             </li>
         {% endif %}
 
-
-        {% if site.resume == true %}
-            <li class="item">
-                <a class="link" href="{{ '/#cv' | relative_url }}">CV</a>
-            </li>
-        {% endif %}
     </ul>
 </nav>

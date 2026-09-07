@@ -6,7 +6,6 @@ title: Home
 <script src="{{ '/assets/js/research-network.js' | relative_url }}" defer></script>
 
 {% assign about_page = site.pages | where: "title", "About" | first %}
-{% assign publications_page = site.pages | where: "title", "Publications" | first %}
 {% assign teaching_page = site.pages | where: "title", "Teaching" | first %}
 {% assign software_page = site.pages | where: "title", "Software" | first %}
 
@@ -15,8 +14,121 @@ title: Home
         {{ about_page.content | markdownify }}
     </section>
 
+    <section id="cv" class="one-page-section cv-section">
+        <h1>CV</h1>
+        <p>Read more about my education, research experience, publications, and academic activities in my curriculum vitae.</p>
+        <a class="cv-link" href="{{ site.resume-url | relative_url }}">Download CV</a>
+    </section>
+
+    <section id="experience" class="one-page-section timeline-section">
+        <h1>Experience</h1>
+        <ol class="timeline-list">
+            <li>
+                <p class="timeline-date">[Dates]</p>
+                <h2>[Position title]</h2>
+                <p class="timeline-place">[Organisation] <span>· [Location]</span></p>
+                <p>[Brief description of responsibilities and achievements.]</p>
+            </li>
+            <li>
+                <p class="timeline-date">[Dates]</p>
+                <h2>[Position title]</h2>
+                <p class="timeline-place">[Organisation] <span>· [Location]</span></p>
+                <p>[Brief description of responsibilities and achievements.]</p>
+            </li>
+            <li>
+                <p class="timeline-date">[Dates]</p>
+                <h2>[Position title]</h2>
+                <p class="timeline-place">[Organisation] <span>· [Location]</span></p>
+                <p>[Brief description of responsibilities and achievements.]</p>
+            </li>
+        </ol>
+    </section>
+
+    <section id="skills" class="one-page-section skills-section">
+        <h1>Skills</h1>
+
+        <div class="skills-category">
+            <h2>Languages</h2>
+            <ul class="skills-list">
+                <li>📊 R</li>
+                <li>🐍 Python</li>
+            </ul>
+        </div>
+
+        <div class="skills-category">
+            <h2>Data &amp; AI</h2>
+            <ul class="skills-list">
+                <li>🕸️ Graph &amp; Network Analysis</li>
+                <li>🔥 Machine Learning &amp; AI</li>
+                <li>🟠 Data Visualisation</li>
+                <li>🧬 Multi-omics integration</li>
+                <li>🧬 RNA-seq</li>
+                <li>🧬 DNA-seq</li>
+            </ul>
+        </div>
+
+        <div class="skills-category">
+            <h2>Tools &amp; Platforms</h2>
+            <ul class="skills-list">
+                <li>🔶 Git</li>
+                <li>💻 HPC</li>
+                <li>🐧 Linux</li>
+                <li>🐙 GitHub</li>
+                <li>🐍 Conda</li>
+                <li>🤖 Agentic AI (OpenAI Codex)</li>
+            </ul>
+        </div>
+
+        <div class="skills-category">
+            <h2>Scientific Research</h2>
+            <ul class="skills-list">
+                <li>🔁 Reproducible bioinformatics workflows</li>
+                <li>✍️ Scientific writing (reports, papers)</li>
+                <li>🎤 Scientific communication (lectures, seminars, conferences)</li>
+                <li>🌱 Mentoring</li>
+                <li>🤝 Multidisciplinary and international collaborations</li>
+            </ul>
+        </div>
+
+        <div class="skills-category">
+            <h2>Languages</h2>
+            <ul class="skills-list">
+                <li>Italian <small>native</small></li>
+                <li>English <small>C2</small></li>
+            </ul>
+        </div>
+
+        <div class="skills-category">
+            <h2>Interests</h2>
+            <ul class="skills-list">
+                <li>📚 Reading</li>
+                <li>🏃 Running</li>
+                <li>🥾 Hiking</li>
+                <li>📺 TV series</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="education" class="one-page-section timeline-section">
+        <h1>Education</h1>
+        <ol class="timeline-list">
+            <li>
+                <p class="timeline-date">[Dates]</p>
+                <h2>[Degree or qualification]</h2>
+                <p class="timeline-place">[Institution] <span>· [Location]</span></p>
+                <p>[Brief description, specialisation, or relevant achievement.]</p>
+            </li>
+            <li>
+                <p class="timeline-date">[Dates]</p>
+                <h2>[Degree or qualification]</h2>
+                <p class="timeline-place">[Institution] <span>· [Location]</span></p>
+                <p>[Brief description, specialisation, or relevant achievement.]</p>
+            </li>
+        </ol>
+    </section>
+
     <section id="papers" class="one-page-section">
-        {{ publications_page.content | markdownify }}
+        {% include publication-summary.html %}
     </section>
 
     <section id="teaching" class="one-page-section">
@@ -27,9 +139,4 @@ title: Home
         {{ software_page.content | markdownify }}
     </section>
 
-    <section id="cv" class="one-page-section cv-section">
-        <h1>CV</h1>
-        <p>Read more about my education, research experience, publications, and academic activities in my curriculum vitae.</p>
-        <a class="cv-link" href="{{ site.resume-url | relative_url }}">View CV (Italian)</a>
-    </section>
 </main>
