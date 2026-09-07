@@ -32,6 +32,11 @@ a
 	color: $delta
 	text-decoration: underline
 	font-weight: $thin-font
+	transition: color .2s ease-in-out
+
+	&:hover,
+	&:focus
+		color: $fuchsia
 
 p
 	line-height: 1.7
@@ -80,13 +85,13 @@ figcaption
 
 blockquote
 	padding-left: 15px
-	border-left: 3px solid #eee
+	border-left: 3px solid $fuchsia
 
 hr
 	border: none
 	height: 1px
 	margin: 40px auto
-	background: #eee
+	background: $epsilon
 	width: 100%
 
 figure.highlight
@@ -98,7 +103,7 @@ code
 	font-family: $fontMonospace
 	font-size: 12px
 	vertical-align: middle
-	background: #eee
+	background: #eff6ff
 	border-radius: 2px
 
 pre > code,
