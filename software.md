@@ -15,7 +15,7 @@ I develop and maintain open-source tools for multi-omics integration, network-ba
 
 - **[PathoNet](https://github.com/SHIDCenter/PathoNet)** — Contributor to a Python deep-learning backend for evaluating Ki-67 and tumour-infiltrating lymphocytes in breast cancer.
 
-- **[NetInt](https://cran.r-project.org/web/packages/NetInt/index.html)** — R package for unweighted and weighted network integration.
+- **[NetInt](https://cran.r-project.org/web/packages/NetInt/index.html)** — Maintainer of the R package for unweighted and weighted network integration.
 
 - **[clusterv](https://cran.r-project.org/web/packages/clusterv/index.html)** — Maintainer of the R package for cluster-stability assessment using randomized maps.
 
