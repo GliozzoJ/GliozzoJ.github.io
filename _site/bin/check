@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+docker compose build site
+docker compose run --rm --no-deps site \
+  bash -lc 'bundle exec jekyll build --destination /tmp/gliozzo-site && bundle exec htmlproofer /tmp/gliozzo-site --disable-external'
