@@ -22,22 +22,34 @@ title: Home
         <h1>Experience</h1>
         <ol class="timeline-list">
             <li>
-                <p class="timeline-date">[Dates]</p>
-                <h2>[Position title]</h2>
-                <p class="timeline-place">[Organisation] <span>· [Location]</span></p>
-                <p>[Brief description of responsibilities and achievements.]</p>
+                <p class="timeline-date">Jan 2026 – Present</p>
+                <h2>Bioinformatician</h2>
+                <p class="timeline-place">Translational Immunology Unit, Fondazione IRCCS Istituto Nazionale dei Tumori <span>· Milan, Italy</span></p>
+                <p>Designing multi-omics analyses for longitudinal breast-cancer studies, developing machine-learning approaches for histopathology, and contributing to RNA-seq analyses with wet-lab collaborators.</p>
             </li>
             <li>
-                <p class="timeline-date">[Dates]</p>
-                <h2>[Position title]</h2>
-                <p class="timeline-place">[Organisation] <span>· [Location]</span></p>
-                <p>[Brief description of responsibilities and achievements.]</p>
+                <p class="timeline-date">Feb 2024 – Aug 2025</p>
+                <h2>Postdoctoral Research Fellow</h2>
+                <p class="timeline-place">Department of Computer Science, Università degli Studi di Milano <span>· Milan, Italy</span></p>
+                <p>Developed patient-similarity-network and graph-based approaches for integrating multi-omics and clinical data, with applications in patient stratification, clustering, and biomarker discovery.</p>
             </li>
             <li>
-                <p class="timeline-date">[Dates]</p>
-                <h2>[Position title]</h2>
-                <p class="timeline-place">[Organisation] <span>· [Location]</span></p>
-                <p>[Brief description of responsibilities and achievements.]</p>
+                <p class="timeline-date">Nov 2020 – Jan 2024</p>
+                <h2>PhD Candidate</h2>
+                <p class="timeline-place">Università degli Studi di Milano &amp; Joint Research Centre, European Commission <span>· Italy</span></p>
+                <p>Developed methods for multimodal data fusion and patient stratification, including approaches that integrate incomplete clinical datasets through patient similarity networks.</p>
+            </li>
+            <li>
+                <p class="timeline-date">Feb 2020 – Oct 2020</p>
+                <h2>Researcher</h2>
+                <p class="timeline-place">Neuroradiology Unit, IRCCS Ospedale San Raffaele <span>· Milan, Italy</span></p>
+                <p>Built an automated MRI-analysis workflow for myelin-water-fraction mapping, brain segmentation with a U-Net, image co-registration, and regional statistical analysis.</p>
+            </li>
+            <li>
+                <p class="timeline-date">Mar 2017 – Jan 2020</p>
+                <h2>Bioinformatician</h2>
+                <p class="timeline-place">Dermatology Unit, Fondazione IRCCS Ca' Granda – Ospedale Maggiore Policlinico <span>· Milan, Italy</span></p>
+                <p>Designed reproducible DNA- and RNA-sequencing pipelines—from raw reads to differential expression, variant calling, and downstream functional analysis—to investigate candidate cancer biomarkers.</p>
             </li>
         </ol>
     </section>
@@ -111,16 +123,22 @@ title: Home
         <h1>Education</h1>
         <ol class="timeline-list">
             <li>
-                <p class="timeline-date">[Dates]</p>
-                <h2>[Degree or qualification]</h2>
-                <p class="timeline-place">[Institution] <span>· [Location]</span></p>
-                <p>[Brief description, specialisation, or relevant achievement.]</p>
+                <p class="timeline-date">Nov 2020 – Apr 2024</p>
+                <h2>PhD in Computer Science</h2>
+                <p class="timeline-place">Università degli Studi di Milano &amp; Joint Research Centre, European Commission <span>· Milan, Italy</span></p>
+                <p>Collaborative Doctoral Partnership programme. Graduated <em>cum laude</em>; doctoral thesis on patient-similarity-network methods for multimodal data integration and clinical outcome prediction.</p>
             </li>
             <li>
-                <p class="timeline-date">[Dates]</p>
-                <h2>[Degree or qualification]</h2>
-                <p class="timeline-place">[Institution] <span>· [Location]</span></p>
-                <p>[Brief description, specialisation, or relevant achievement.]</p>
+                <p class="timeline-date">Mar 2014 – Dec 2016</p>
+                <h2>Master's Degree in Molecular Biotechnology and Bioinformatics</h2>
+                <p class="timeline-place">Università degli Studi di Milano <span>· Milan, Italy</span></p>
+                <p>Graduated 110/110 with honours. Thesis research on network-based outcome prediction was conducted in part at the PaccanaroLab, Royal Holloway, University of London.</p>
+            </li>
+            <li>
+                <p class="timeline-date">Sep 2010 – Feb 2014</p>
+                <h2>Bachelor's Degree in Medical Biotechnology</h2>
+                <p class="timeline-place">Università degli Studi di Milano <span>· Milan, Italy</span></p>
+                <p>Graduated 104/110. Thesis on the evaluation of luciferase activity in cell cultures.</p>
             </li>
         </ol>
     </section>
@@ -135,6 +153,32 @@ title: Home
 
     <section id="software" class="one-page-section">
         {{ software_page.content | markdownify }}
+    </section>
+
+    <section id="contact" class="one-page-section contact-section">
+        <div class="contact-card">
+            <div class="contact-card__details">
+                <h1>Contact</h1>
+                <div class="contact-detail">
+                    <span class="contact-detail__icon" aria-hidden="true">⌖</span>
+                    <div>
+                        <h2>Location</h2>
+                        <p>Milan, Italy</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <span class="contact-detail__icon" aria-hidden="true">✉</span>
+                    <div>
+                        <h2>INT email</h2>
+                        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-card__message">
+                <h1>Let’s connect</h1>
+                <p>Interested in collaborating, discussing a project, or simply connecting? I’d be delighted to hear from you. ✨</p>
+            </div>
+        </div>
     </section>
 
 </main>

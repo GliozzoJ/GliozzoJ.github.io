@@ -3,19 +3,20 @@ title: Software
 layout: page
 ---
 
-# Softwares
+# Software
 
-The following software libraries are freely available for the scientific community.
+I develop and maintain open-source tools for multi-omics integration, network-based modelling, image analysis, and clustering-quality assessment.
 
-- Developer of R library **miss-SNF** ([link](https://github.com/GliozzoJ/missSNF)).
+- **[miss-SNF](https://github.com/GliozzoJ/missSNF)** — R package for multimodal patient-similarity-network integration when data sources are completely missing.
 
-- Developer of the R library **P-Net: Network-based ranking of patients with respect to a given phenotype/outcome** ([link](https://github.com/GliozzoJ/P-Net))
+- **[P-Net](https://github.com/GliozzoJ/P-Net)** — R package for network-based ranking of patients with respect to a phenotype or clinical outcome.
 
-- Developer of the Python repository **pathonet\_compression: Reducing the Complexity of Deep Learning Models for Medical Applications in Resource-limited Contexts** ([link](https://github.com/GliozzoJ/pathonet_compression))
+- **[pathonet_compression](https://github.com/GliozzoJ/pathonet_compression)** — Python framework for reducing the complexity of deep-learning models for medical applications in resource-limited settings.
 
-- Collaborator of the Python repository **PathoNet: deep neural network backend for evaluation of Ki-67 and tumor-infiltrating lymphocytes in breast cancer** ([link](https://github.com/SHIDCenter/PathoNet))
+- **[PathoNet](https://github.com/SHIDCenter/PathoNet)** — Contributor to a Python deep-learning backend for evaluating Ki-67 and tumour-infiltrating lymphocytes in breast cancer.
 
-- Maintainer of the R library **NetInt: Methods for Unweighted and Weighted Network Integration** ([link](https://cran.r-project.org/web/packages/NetInt/index.html))
+- **[NetInt](https://cran.r-project.org/web/packages/NetInt/index.html)** — R package for unweighted and weighted network integration.
 
-- Collaborator to the R library **mclustcomp: Measures for Comparing Clusters** ([link](https://github.com/kisungyou/mclustcomp))
+- **[clusterv](https://cran.r-project.org/web/packages/clusterv/index.html)** — Maintainer of the R package for cluster-stability assessment using randomized maps.
 
+- **[mosclust](https://cran.r-project.org/web/packages/mosclust/index.html)** — Maintainer of the R package for model-order selection in clustering.

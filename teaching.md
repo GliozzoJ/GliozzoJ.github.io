@@ -5,31 +5,20 @@ layout: page
 
 # Teaching
 
-- A.Y. 2023-2024 Tutor for the practical lessons of the course “Bioinformatics” (Master's degree 
-in Computer Science [LM-18], Università degli Studi di Milano) (material on [github](https://github.com/GliozzoJ/Bioinformatics_practice_2023-2024))
+## Teaching assistant
 
-- A.Y. 2022-2023 Tutor for the practical lessons of the course “Bioinformatics” (Master's degree 
-in Computer Science [LM-18], Università degli Studi di Milano (material on [github](https://github.com/GliozzoJ/Bioinformatics_practice2023))
+- **2022–2024** — Teaching Assistant for *Bioinformatics* (MSc in Computer Science), Università degli Studi di Milano. Organised and delivered practical laboratory sessions and the final practical examination (18 hours total), covering classification and disease-subtype discovery with single- and multi-omics data. [Course material 2022–23](https://github.com/GliozzoJ/Bioinformatics_practice2023) · [Course material 2023–24](https://github.com/GliozzoJ/Bioinformatics_practice_2023-2024)
 
+## Guest lectures
 
-# Seminars
+- **2020–2025** — Guest Lecturer, Università degli Studi di Milano. Delivered lectures for *Bioinformatics* (MSc in Computer Science), *Principles and Models of Perception* (BSc in Computer Science for New Media Communications), and *General Computer Science* (BSc in Cultural Heritage: Sciences, Technologies and Diagnostics).
 
-- Speaker at the Advanced Program “[FILOGENESI APPLICATA ALLA EPIDEMIOLOGIA
-E SORVEGLIANZA GENOMICA DEGLI AGENTI INFETTIVI](https://sites.google.com/view/phylovir20/annunci)” at Dipartimento di Scienze Biomediche e Cliniche, Università degli Studi di Milano. I presented my work entitled “Pipelines automatiche per
-l’analisi di genomi virali SARS-CoV-2” (coming soon 5 July 2024).
+- **2024–2025** — Guest Lecturer for *Applied Phylogenetics for Epidemiology and Genomic Surveillance of Infectious Agents*, Department of Biomedical and Clinical Sciences, Università degli Studi di Milano. Topic: automated pipelines for SARS-CoV-2 viral-genome analysis.
 
-- Speaker at the course “Bioinfomatics” (Master's degree 
-in Computer Science [LM-18], Università degli Studi di
-Milano) in the academic years 2020-2021 e 2021-2022. I presented my work entitled “[Kernels on graphs
-and the P-Net algorithm](https://homes.di.unimi.it/gliozzo/lessons/kernels_on_graphs_and_P-Net.pdf)”.
+Selected topics include [kernels on graphs and the P-Net algorithm](https://homes.di.unimi.it/gliozzo/lessons/kernels_on_graphs_and_P-Net.pdf), and automated genomic-surveillance workflows.
 
-- Speaker at the course “Principles and Models of Perception” (Bachelor's degree in Computer Science for New Media Communications[L-31], Università degli Studi di Milano) in the academic year 2021-2022. I presented my work entitled “[Kernels on graphs and the P-Net algorithm](https://homes.di.unimi.it/gliozzo/lessons/kernels_on_graphs_and_P-Net.pdf)”.
+## Mentoring
 
-
-# Speaker at conferences
-
-- Speaker at the conference “BIOINFORMATICS 2023 - 14th International Conference on Bioinformatics
-Models, Methods and Algorithms”. I presented my work “[Patient Similarity Networks Integration
-for Partial Multimodal Datasets](https://www.insticc.org/node/TechnicalProgram/BIOSTEC/2023/presentationDetails/117255)”.
+- **2020–2025** — Co-supervised four BSc and four MSc theses at Università degli Studi di Milano. Topics included patient-similarity networks, multimodal integration, graph neural networks, viral genomics, and machine learning for biomedical data.
 
 
