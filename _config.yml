@@ -79,7 +79,7 @@ about: true
 publications: true
 teaching: true
 software: true
-blog: false
+blog: true
 
 
 # do you want to show the "read time" of the posts?

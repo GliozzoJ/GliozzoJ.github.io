@@ -379,15 +379,15 @@ pre { box-sizing: border-box; margin: 0 0 1.75em 0; width: 100%; padding: 5px 10
   .contact-card__details, .contact-card__message { padding: 40px 32px; } }
 @media only screen and (max-width: 400px) { .timeline-list { padding-left: 27px; }
   .timeline-list > li:before { left: -36px; } }
-.home > .list > .item, .blog > .list > .item, .projects > .list > .item { display: block; width: 95%; margin: 0 auto; }
-.home > .list > .item > .url, .blog > .list > .item > .url, .projects > .list > .item > .url { width: 100%; display: block; padding: 20px 0; text-decoration: none; }
-.home > .list > .item > .url > .title, .blog > .list > .item > .url > .title, .projects > .list > .item > .url > .title { margin: 0; width: 75%; font-weight: 500; transition: all ease-in-out 0.2s; }
-.home > .list > .item:hover > .url > .title, .blog > .list > .item:hover > .url > .title, .projects > .list > .item:hover > .url > .title { color: #d946ef; }
-.home > .list aside, .blog > .list aside, .projects > .list aside { position: relative; top: 2px; margin: 0; width: 25%; float: right; font-weight: 300; color: #64748b; text-align: right; transition: all ease-in-out 0.2s; }
-.home > .list .item:hover .url aside, .blog > .list .item:hover .url aside, .projects > .list .item:hover .url aside { color: #334155; }
+.home > .list > .item, .blog > .list > .item, .news > .list > .item, .projects > .list > .item { display: block; width: 95%; margin: 0 auto; }
+.home > .list > .item > .url, .blog > .list > .item > .url, .news > .list > .item > .url, .projects > .list > .item > .url { width: 100%; display: block; padding: 20px 0; text-decoration: none; }
+.home > .list > .item > .url > .title, .blog > .list > .item > .url > .title, .news > .list > .item > .url > .title, .projects > .list > .item > .url > .title { margin: 0; width: 75%; font-weight: 500; transition: all ease-in-out 0.2s; }
+.home > .list > .item:hover > .url > .title, .blog > .list > .item:hover > .url > .title, .news > .list > .item:hover > .url > .title, .projects > .list > .item:hover > .url > .title { color: #d946ef; }
+.home > .list aside, .blog > .list aside, .news > .list aside, .projects > .list aside { position: relative; top: 2px; margin: 0; width: 25%; float: right; font-weight: 300; color: #64748b; text-align: right; transition: all ease-in-out 0.2s; }
+.home > .list .item:hover .url aside, .blog > .list .item:hover .url aside, .news > .list .item:hover .url aside, .projects > .list .item:hover .url aside { color: #334155; }
 
-.blog > .list > .item > .url > .title, .projects > .list > .item > .url > .title { display: inline; }
-.blog > .list > .item > .url > .emoji, .projects > .list > .item > .url > .emoji { display: inline; position: relative; top: -4px; margin-right: 10px; }
+.blog > .list > .item > .url > .title, .news > .list > .item > .url > .title, .projects > .list > .item > .url > .title { display: inline; }
+.blog > .list > .item > .url > .emoji, .news > .list > .item > .url > .emoji, .projects > .list > .item > .url > .emoji { display: inline; position: relative; top: -4px; margin-right: 10px; }
 
 .page { margin-top: 125px; }
 .page > h1 { text-align: center; margin-bottom: 6rem; }
@@ -513,12 +513,13 @@ pre { box-sizing: border-box; margin: 0 0 1.75em 0; width: 100%; padding: 5px 10
 .share { float: right; width: 40%; display: inline; text-align: right; position: relative; }
 @media only screen and (max-width: 400px) { .share { width: 100%; display: block; top: 0; text-align: left; float: none; margin-top: 5px; } }
 @media only screen and (min-width: 400px) and (max-width: 1050px) { .share { width: 100%; display: block; top: 0; text-align: left; float: none; margin-top: 5px; } }
-.share > .twitter, .share > .facebook, .share > .linkedin { display: inline; vertical-align: middle; font-size: 13px; font-weight: 700; color: #fff; padding: 6px 10px; border-radius: 3px; margin-left: 5px; text-decoration: none; }
-@media only screen and (max-width: 400px) { .share > .twitter, .share > .facebook, .share > .linkedin { margin: 0 5px 10px 0; } }
-@media only screen and (min-width: 400px) and (max-width: 1050px) { .share > .twitter, .share > .facebook, .share > .linkedin { margin: 0 5px 10px 0; } }
+.share > .twitter, .share > .facebook, .share > .linkedin, .share > .copy-link { display: inline; vertical-align: middle; font-size: 13px; font-weight: 700; color: #fff; padding: 6px 10px; border-radius: 3px; margin-left: 5px; text-decoration: none; }
+@media only screen and (max-width: 400px) { .share > .twitter, .share > .facebook, .share > .linkedin, .share > .copy-link { margin: 0 5px 10px 0; } }
+@media only screen and (min-width: 400px) and (max-width: 1050px) { .share > .twitter, .share > .facebook, .share > .linkedin, .share > .copy-link { margin: 0 5px 10px 0; } }
 .share > .twitter { background: #4fafed; }
 .share > .facebook { background: #4361b3; }
 .share > .linkedin { background: #0077b5; }
+.share > .copy-link { background: #64748b; border: 0; cursor: pointer; font-family: inherit; }
 .share svg { fill: #ffffff; position: relative; top: 0; margin: 0; margin-right: 4px; display: inherit; }
 
 @media only screen and (min-width: 780px) { .side-by-side { width: 130%; margin: 6rem 0 6rem -15%; } }
@@ -584,6 +585,10 @@ pre { box-sizing: border-box; margin: 0 0 1.75em 0; width: 100%; padding: 5px 10
         
 
 
+        
+            <li class="item">
+                <a class="link" href="/news/">News</a>
+            </li>
         
 
         
@@ -676,6 +681,25 @@ If you need some help, just <a href="https://github.com/sergiokopplin/indigo/iss
                 
             
         
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
     
         
         
@@ -718,20 +742,22 @@ If you need some help, just <a href="https://github.com/sergiokopplin/indigo/iss
                 <span class="icon-twitter">Tweet</span>
             </a>
 
-            <a class="facebook" href="javascript:void(0)" onclick="window.open('https://facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 'facebook-share-dialog', 'width=626,height=436'); return false;">
-                <i class="fa-brands fa-facebook"></i>
-                <span class="icon-facebook-rect">Share</span>
+            <a class="linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https://gliozzoj.github.io/indigo-jekyll-theme/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin"></i>
+                <span class="icon-linkedin">LinkedIn</span>
             </a>
 
-            <!-- <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://gliozzoj.github.io/indigo-jekyll-theme/&amp;title=:ramen: Indigo, minimalist jekyll theme&amp;summary=This is a simple and minimalist template for Jekyll for those who likes to eat noodles.&amp;source=https://gliozzoj.github.io" target="_blank">
-                <i class="fa-brands fa-linkedin"></i>
-                <span class="icon-linkedin">Share</span>
-            </a> -->
+            <button class="copy-link" type="button" data-copy-link aria-live="polite">
+                <i class="fa-solid fa-link" aria-hidden="true"></i>
+                <span>Copy link</span>
+            </button>
         </div>
     </div>
 </section>
 
 
+
+<script src="/assets/js/copy-link.js" defer></script>
 
 
     <section class="disqus">
