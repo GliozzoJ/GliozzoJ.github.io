@@ -23,18 +23,14 @@
             </a>
 
             <a
-                class="facebook"
-                href="javascript:void(0)"
-                onclick="window.open('https://facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 'facebook-share-dialog', 'width=626,height=436'); return false;"
+                class="linkedin"
+                href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}"
+                target="_blank"
+                rel="noopener noreferrer"
             >
-                <i class="fa-brands fa-facebook"></i>
-                <span class="icon-facebook-rect">Share</span>
-            </a>
-
-            <!-- <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.url }}{{ page.url }}&amp;title={{ page.title }}&amp;summary={{ page.description }}&amp;source={{ site.url }}" target="_blank">
                 <i class="fa-brands fa-linkedin"></i>
-                <span class="icon-linkedin">Share</span>
-            </a> -->
+                <span class="icon-linkedin">LinkedIn</span>
+            </a>
         </div>
     </div>
 </section>
